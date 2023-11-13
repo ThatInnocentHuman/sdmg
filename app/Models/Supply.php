@@ -20,11 +20,11 @@ class Supply extends Model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function supplier(): BelongsTo{
-        return $this->belongsTo(Supplier::class);
+        return $this->belongsTo(Supplier::class, 'supplier_id');
     }
 
     public function tube(): BelongsTo{
-        return $this->belongsTo(Tube::class);
+        return $this->belongsTo(Tube::class, 'tube_id');
     }
 
     

@@ -15,8 +15,11 @@ class SupplyController extends Controller
      */
     public function index()
     {
-        return SupplyResource::collection(Supply::query()->paginate(20));
+        $supplies = Supply::with('supplier')->paginate(20);
+        return SupplyResource::collection($supplies);
     }
+    // Contoh: Di dalam metode controller
+
 
     /**
      * Store a newly created resource in storage.
